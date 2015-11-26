@@ -1,5 +1,3 @@
-use std::*;
-
 fn main(){
     /* Constant variables */
     let firstNumber  = 5;
@@ -11,6 +9,18 @@ fn main(){
 
     /* A tuple */
     let tuple = (4, 5.5, true, "bye");
+    let typedTuple: (i32, &str) = (10, "hey");
+
+    /* An array */
+    let mut array = [0; 10];
+    println!("The array has {} elements.", array.len()); // .len() gets the length of the array
+    array[0] = 12;
+    println!("The first element in the array is {}.", array[0]);
+
+    /* Slices */
+    let anotherArray = &array[0..4]; // just the first 4 elements
+    println!("The next array has {} elements in it.", anotherArray.len());
+
 
     /* Conditionals */
     if firstNumber == 6 {
@@ -81,10 +91,10 @@ fn main(){
     }
 
     /* For */
-    // i = 0;
-    // for i in range(0, 10) { //the "range" function doesn't exist?
-    //     println!("Goodbye!");
-    // }
+    i = 0;
+    for i in 0..10 { //the "range" function doesn't exist?
+        println!("Goodbye!");
+    }
 
     /* Expressions */
     let mut x = 5;
@@ -109,7 +119,7 @@ fn main(){
 
     println!("{}", foo2);
 
-    prime_Sum(2, 3, 4);
+    prime_sum(2, 3, 4);
 
     println!("{}", square(2));
 }
@@ -117,7 +127,7 @@ fn main(){
 /* Functions */
 
 /* A void function */
-fn prime_Sum(x: i8, y: i8, m: i8) {
+fn prime_sum(x: i8, y: i8, m: i8) {
     match (x+y)%m {
         0 => { println!("Multiple"); }
         _ => { println!("Relatively prime"); }

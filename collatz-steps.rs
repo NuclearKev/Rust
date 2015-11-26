@@ -36,3 +36,4 @@ fn collatz(n: i32) -> i32 {
         _ => { 1 + collatz(3*n + 1) }
     }
 }
+
